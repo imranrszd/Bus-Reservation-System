@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.util.Random;
 
 public class TicketApp {
     public static void main(String[] args) {
@@ -64,12 +63,12 @@ public class TicketApp {
                 System.out.print("\nNext Customer Information");
                 System.out.print("\n--------------------------------------------");
             }
+            scan.close();
+            scan1.close();
         }
 
-        double price = 0.0;
         double totalprice = 0.0;
         int count = 0;
-        double price1 = 0.0;
         double totalprice1 = 0.0;
         int count1 = 0;
         for (int i = 0; i < tick.length; i++) {
@@ -114,7 +113,7 @@ public class TicketApp {
             outPhysicalTicket.println("\t\t|=================================|\t\t");
 
             PrintWriter outDigitalTicket = new PrintWriter(
-                    new BufferedWriter(new FileWriter("DigitalTicket.txt")));
+                    new BufferedWriter(new FileWriter("C:\\Record\\DigitalTicket.txt")));
             outDigitalTicket.println("\t\t|=================================|\t\t");
             outDigitalTicket.println("\t\t|=============RECEIPT=============|\t\t");
             outDigitalTicket.println("\t\t|=================================|\t\t");
