@@ -1,0 +1,8 @@
+Kedah;2.0;KC1200
+Penang;3.0;PGD2022
+Perak;4.0;ACT1023
+Pahang;6.0;CER2006
+Kelantan;8.0;RCS1102
+Selangor;7.0;WPG3122
+Melaka;10.0;MGF5523
+Johor;12.0;JPH4321
