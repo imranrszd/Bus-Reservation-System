@@ -63,8 +63,7 @@ public class TicketApp {
                 System.out.print("\nNext Customer Information");
                 System.out.print("\n--------------------------------------------");
             }
-            scan.close();
-            scan1.close();
+
         }
 
         double totalprice = 0.0;
@@ -113,7 +112,7 @@ public class TicketApp {
             outPhysicalTicket.println("\t\t|=================================|\t\t");
 
             PrintWriter outDigitalTicket = new PrintWriter(
-                    new BufferedWriter(new FileWriter("C:\\Record\\DigitalTicket.txt")));
+                    new BufferedWriter(new FileWriter("DigitalTicket.txt")));
             outDigitalTicket.println("\t\t|=================================|\t\t");
             outDigitalTicket.println("\t\t|=============RECEIPT=============|\t\t");
             outDigitalTicket.println("\t\t|=================================|\t\t");
