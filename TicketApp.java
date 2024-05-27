@@ -16,27 +16,36 @@ public class TicketApp {
         System.out.print("\nEnter how many ticket: ");
         int q = scan.nextInt();
         Ticket[] tick = new Ticket[q];
+        String[] destinations = {
+                "Kedah   [Alor Setar Bus Station]",
+                "Penang  [Butterworth Bus Terminal]",
+                "Perak   [Tanjung Malim Bus Station]",
+                "Pahang  [Terminal Sentral Kuantan]",
+                "Kelantan[Kota Bharu Bus Terminal]",
+                "Selangor[Kuala Lumper Sentral] ",
+                "Melaka  [Melaka Sentral Bus Terminal] ",
+                "Johor   [Johor Bahru Sentral Bus Station]",
+        };
 
         for (int i = 0; i < tick.length; i++) {
             System.out.print("\nEnter name: ");
             String cn = scan1.nextLine();
-            System.out.print("\nEnter Number Phone (if none put -): ");
+            System.out.print("Enter Number Phone (if none put -): ");
             String cp = scan1.nextLine();
-            System.out.print("\nEnter Age: ");
+            System.out.print("Enter Age: ");
             int cage = scan.nextInt();
-            System.out.print("\nKedah   [Alor Setar Bus Station] ");
-            System.out.print("\nPenang  [Butterworth Bus Terminal]");
-            System.out.print("\nPerak   [Tanjung Malim Bus Station]");
-            System.out.print("\nPahang  [Terminal Sentral Kuantan] ");
-            System.out.print("\nKelantan[Kota Bharu Bus Terminal] ");
-            System.out.print("\nSelangor[Kuala Lumper Sentral] ");
-            System.out.print("\nMelaka  [Melaka Sentral Bus Terminal] ");
-            System.out.print("\nJohor   [Johor Bahru Sentral Bus Station] ");
-            System.out.print("\n\nEnter destination: ");
+
+            System.out.println();
+            for (String destination : destinations) {
+                System.out.println(destination);
+            }
+            System.out.print("\nEnter destination: ");
             String d = scan1.nextLine();
-            System.out.print("\nPls enter seat number: ");
+
+            System.out.print("Pls enter seat number: ");
             int snum = scan.nextInt();
-            System.out.println("[1-physical ticket]");
+
+            System.out.println("\n[1-physical ticket]");
             System.out.println("[2-digital ticket ]");
             System.out.print("\nTicket type: ");
             int tt = scan.nextInt();
