@@ -64,6 +64,9 @@ public class TicketApp {
                 System.out.print("\n--------------------------------------------");
             }
 
+            scan.close();
+            scan1.close();
+
         }
 
         double totalprice = 0.0;
@@ -87,9 +90,7 @@ public class TicketApp {
         int newtickettotal = count + count1;
         double newprice = totalprice + totalprice1;
 
-        try
-
-        {
+        try {
             BufferedReader br = new BufferedReader(new FileReader("car.txt"));
             String in = null;
             StringTokenizer st = null;
@@ -214,7 +215,6 @@ public class TicketApp {
         } catch (Exception e) {
             System.out.println("Problem: " + e.getMessage());
         }
-
     }
 
 }
