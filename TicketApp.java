@@ -17,14 +17,14 @@ public class TicketApp {
         int q = scan.nextInt();
         Ticket[] tick = new Ticket[q];
         String[] destinations = {
-                "Kedah   [Alor Setar Bus Station]",
-                "Penang  [Butterworth Bus Terminal]",
-                "Perak   [Tanjung Malim Bus Station]",
-                "Pahang  [Terminal Sentral Kuantan]",
-                "Kelantan[Kota Bharu Bus Terminal]",
-                "Selangor[Kuala Lumper Sentral] ",
-                "Melaka  [Melaka Sentral Bus Terminal] ",
-                "Johor   [Johor Bahru Sentral Bus Station]",
+                "Kedah    [Alor Setar Bus Station]",
+                "Penang   [Butterworth Bus Terminal]",
+                "Perak    [Tanjung Malim Bus Station]",
+                "Pahang   [Terminal Sentral Kuantan]",
+                "Kelantan [Kota Bharu Bus Terminal]",
+                "Selangor [Kuala Lumper Sentral] ",
+                "Melaka   [Melaka Sentral Bus Terminal] ",
+                "Johor    [Johor Bahru Sentral Bus Station]",
         };
 
         for (int i = 0; i < tick.length; i++) {
