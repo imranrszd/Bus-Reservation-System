@@ -64,8 +64,10 @@ public class TicketApp {
                 System.out.print("\n--------------------------------------------");
             }
 
-            scan.close();
-            scan1.close();
+            if (i + 1 == tick.length) {
+                scan.close();
+                scan1.close();
+            }
 
         }
 
