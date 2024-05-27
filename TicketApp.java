@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class TicketApp {
+
     public static void main(String[] args) {
         System.out.print("\t\t|=======================================================|\t\t");
         System.out.print("\n\t\t|           WELCOME TO KAEDAHARA STATION BUS            |\t\t");
@@ -126,31 +127,8 @@ public class TicketApp {
                             + phystic.calcPrice());
                     outPhysicalTicket.println("----------------------------------------");
 
-                    if (info[i].getDestination().equalsIgnoreCase("Kedah")) {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Penang")) {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Perak")) {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Pahang")) {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Kelantan")) {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Selangor")) {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Melaka")) {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    } else {
-                        outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "h" + "\nBus Plate: "
-                                + info[i].getBusName());
-                    }
+                    outPhysicalTicket.println("\nTime arive: " + info[i].getDuration() + "hour" + "\nBus Plate: "
+                            + info[i].getBusName());
 
                     outPhysicalTicket.println("\n----------------------------------------\n");
                 } else if (tick[i] instanceof DigitalTicket) {
@@ -159,39 +137,8 @@ public class TicketApp {
                             .println(dt.toString() + "\nTicket type: Digital Ticket" + "\nPrice: RM" + dt.calcPrice());
                     outDigitalTicket.println("----------------------------------------");
 
-                    if (info[i].getDestination().equalsIgnoreCase("Kedah")) {
-
-                        outDigitalTicket.println(
-                                "\nTime arive:" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Penang")) {
-
-                        outDigitalTicket.println(
-                                "\nTime arive:" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Perak")) {
-
-                        outDigitalTicket.println(
-                                "\nTime arive" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Pahang")) {
-
-                        outDigitalTicket.println(
-                                "\nTime arive:" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Kelantan")) {
-
-                        outDigitalTicket.println(
-                                "\nTime arive:" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Selangor")) {
-
-                        outDigitalTicket.println(
-                                "\nTime arive:" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    } else if (info[i].getDestination().equalsIgnoreCase("Melaka")) {
-
-                        outDigitalTicket.println(
-                                "\nTime arive:" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    } else {
-
-                        outDigitalTicket.println(
-                                "\nTime arive:" + info[i].getDuration() + "h" + "\nBus Plate: " + info[i].getBusName());
-                    }
+                    outDigitalTicket.println(
+                            "\nTime arive:" + info[i].getDuration() + " hour" + "\nBus Plate: " + info[i].getBusName());
 
                     outDigitalTicket.println("\n----------------------------------------\n");
                 }
