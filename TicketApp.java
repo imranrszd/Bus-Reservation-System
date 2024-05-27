@@ -4,9 +4,11 @@ import java.util.*;
 public class TicketApp {
 
     public static void main(String[] args) {
-        System.out.print("\t\t|=======================================================|\t\t");
-        System.out.print("\n\t\t|           WELCOME TO KAEDAHARA STATION BUS            |\t\t");
-        System.out.print("\n\t\t|=======================================================|\t\t\n");
+
+        System.out.println();
+        System.out.println("|=======================================================|");
+        System.out.println("|           WELCOME TO KAEDAHARA STATION BUS            |");
+        System.out.println("|=======================================================|\n");
 
         Scanner scan = new Scanner(System.in);
         Scanner scan1 = new Scanner(System.in);
@@ -18,7 +20,7 @@ public class TicketApp {
         for (int i = 0; i < tick.length; i++) {
             System.out.print("\nEnter name: ");
             String cn = scan1.nextLine();
-            System.out.print("\nEnter Number Phone(if none put -): ");
+            System.out.print("\nEnter Number Phone (if none put -): ");
             String cp = scan1.nextLine();
             System.out.print("\nEnter Age: ");
             int cage = scan.nextInt();
@@ -30,30 +32,25 @@ public class TicketApp {
             System.out.print("\nSelangor[Kuala Lumper Sentral] ");
             System.out.print("\nMelaka  [Melaka Sentral Bus Terminal] ");
             System.out.print("\nJohor   [Johor Bahru Sentral Bus Station] ");
-            System.out.print("\nEnter destination: ");
+            System.out.print("\n\nEnter destination: ");
             String d = scan1.nextLine();
             System.out.print("\nPls enter seat number: ");
             int snum = scan.nextInt();
-            System.out.print("\nticket type[1-physical ticket | 2-digital ticket]:");
+            System.out.println("[1-physical ticket]");
+            System.out.println("[2-digital ticket ]");
+            System.out.print("\nTicket type: ");
             int tt = scan.nextInt();
+
+            System.out.print("\nEnter the date [dd]: ");
+            int dy = scan.nextInt();
+            System.out.print("Enter the month [mm]: ");
+            int mon = scan.nextInt();
+            System.out.print("Enter the year [yyyy]: ");
+            int yr = scan.nextInt();
+
             if (tt == 1) {
-                System.out.print("\nEnter the date: ");
-                int dy = scan.nextInt();
-                System.out.print("\nEnter the month: ");
-                int mon = scan.nextInt();
-                System.out.print("\nEnter the year: ");
-                int yr = scan.nextInt();
-
                 tick[i] = new PhysicalTicket(cn, cp, cage, tt, d, snum, dy, mon, yr);
-
             } else if (tt == 2) {
-                System.out.print("\nEnter the date: ");
-                int dy = scan.nextInt();
-                System.out.print("\nEnter the month: ");
-                int mon = scan.nextInt();
-                System.out.print("\nEnter the year: ");
-                int yr = scan.nextInt();
-
                 tick[i] = new DigitalTicket(cn, cp, cage, tt, d, snum, dy, mon, yr);
             } else {
                 System.out.print("\nERRORS");
@@ -109,17 +106,17 @@ public class TicketApp {
 
                 cnt++;
             }
+
             PrintWriter outPhysicalTicket = new PrintWriter(
                     new BufferedWriter(new FileWriter("PhysicalTicket.txt")));
-            outPhysicalTicket.println("\t\t|=================================|\t\t");
-            outPhysicalTicket.println("\t\t|=============RECEIPT=============|\t\t");
-            outPhysicalTicket.println("\t\t|=================================|\t\t");
-
             PrintWriter outDigitalTicket = new PrintWriter(
                     new BufferedWriter(new FileWriter("DigitalTicket.txt")));
-            outDigitalTicket.println("\t\t|=================================|\t\t");
-            outDigitalTicket.println("\t\t|=============RECEIPT=============|\t\t");
-            outDigitalTicket.println("\t\t|=================================|\t\t");
+
+            String receiptBanner = "\t\t|=================================|\t\t\n\t\t|             RECEIPT             |\t\t\n\t\t|=================================|\t\t";
+
+            outPhysicalTicket.println(receiptBanner);
+            outDigitalTicket.println(receiptBanner);
+
             for (int i = 0; i < tick.length; i++) {
                 if (tick[i] instanceof PhysicalTicket) {
                     PhysicalTicket phystic = (PhysicalTicket) tick[i];
@@ -138,20 +135,22 @@ public class TicketApp {
                     outDigitalTicket.println("----------------------------------------");
 
                     outDigitalTicket.println(
-                            "\nTime arive:" + info[i].getDuration() + " hour" + "\nBus Plate: " + info[i].getBusName());
+                            "\nTime arive: " + info[i].getDuration() + " hour" + "\nBus Plate: "
+                                    + info[i].getBusName());
 
                     outDigitalTicket.println("\n----------------------------------------\n");
                 }
 
             }
 
-            System.out.print("\n\t\t|======================================|\t\t");
-            System.out.print("\n\t\t|           DATA INFORMATION           |\t\t");
-            System.out.print("\n\t\t|======================================|\t\t\n");
-            System.out.println("\nTotal ticket purchase by Physical: " + count);
-            System.out.println("\nTotal ticket purchase by Digital: " + count1);
-            System.out.println("\nTotal ticket purchase by both(Physical/Digital): " + newtickettotal);
-            System.out.println("\nTotal price ticket purchase by all passenger RM: " + newprice);
+            System.out.print("\n\n----------------------------------------\n");
+            System.out.print("\n|======================================|");
+            System.out.print("\n|           DATA INFORMATION           |");
+            System.out.print("\n|======================================|\n");
+            System.out.println("\nTotal Physical ticket purchase: " + count);
+            System.out.println("Total Digital ticket purchase: " + count1);
+            System.out.println("\nTotal sum ticket purchase: " + newtickettotal);
+            System.out.printf("\nTotal price ticket purchase by all passenger RM: %.2f%n\n", newprice);
 
             outPhysicalTicket.close();
             outDigitalTicket.close();
